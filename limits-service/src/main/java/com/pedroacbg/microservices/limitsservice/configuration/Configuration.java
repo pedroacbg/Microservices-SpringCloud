@@ -1,18 +1,14 @@
-package com.pedroacbg.microservices.limitsservice.bean;
+package com.pedroacbg.microservices.limitsservice.configuration;
 
-public class Limits {
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Component
+@ConfigurationProperties("limits-service")
+public class Configuration {
 
     private Integer minimum;
     private Integer maximum;
-
-    public Limits(){
-
-    }
-
-    public Limits(Integer minimum, Integer maximum) {
-        this.minimum = minimum;
-        this.maximum = maximum;
-    }
 
     public Integer getMinimum() {
         return minimum;
@@ -29,5 +25,4 @@ public class Limits {
     public void setMaximum(Integer maximum) {
         this.maximum = maximum;
     }
-
 }
